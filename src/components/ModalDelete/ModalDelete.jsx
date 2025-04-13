@@ -4,7 +4,7 @@ export default function Modal({ message, onConfirm, onCancel }) {
   return (
     <div className={css.overlay}>
       <div className={css.modal}>
-        <p>{message}</p>
+        <p className={css.p}>{message}</p>
         <div className={css.actions}>
           <button className={css.btn} onClick={onConfirm}>
             Confirm

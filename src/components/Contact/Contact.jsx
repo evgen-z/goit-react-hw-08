@@ -18,10 +18,10 @@ export default function Contact({ contact }) {
     dispatch(deleteContact(contact.id))
       .unwrap()
       .then(() => {
-        toast.success(`Contact "${contact.name}" deleted successfully!`);
+        toast.success(`Contact "${contact.name}" was deleted!`);
       })
       .catch(() => {
-        toast.error("Failed to delete contact. Please try again.");
+        toast.error("Unable to delete contact. Please try again.");
       })
       .finally(() => {
         setIsModalOpen(false);

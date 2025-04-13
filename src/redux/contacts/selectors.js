@@ -10,9 +10,11 @@ export const selectIsError = (state) => state.contacts.error;
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectQuery],
   (contacts, query) => {
-    const normalizedQuery = query.toLowerCase();
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(normalizedQuery)
+    const normalizedQuery = query.toLowerCase().replace(/-/g, "");
+    return contacts.filter(
+      (contact) =>
+        contact.name.toLowerCase().includes(normalizedQuery) ||
+        contact.number.replace(/-/g, "").includes(normalizedQuery)
     );
   }
 );

@@ -19,6 +19,10 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.p {
+    color: black;
+}
+
 .actions {
     margin-top: 20px;
     display: flex;
